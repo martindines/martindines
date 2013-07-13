@@ -340,23 +340,18 @@ body {
   margin: 3em 0;
   font-family: Muli; }
 
+h2 {
+  font-family: Nunito; }
+
 header {
-  *zoom: 1;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3em;
-  padding: 5em 4em;
-  background-color: #ffd400; }
-  header:before, header:after {
-    content: " ";
-    display: table; }
-  header:after {
-    clear: both; }
+  margin: 3em 0;
+  padding: 3em 0;
+  background-color: #ffd400;
+  text-align: center; }
   header h1 {
     margin: 0 0 0.15em 0;
     padding-bottom: 0.2em;
-    font-family: 'Nunito';
+    font-family: Nunito;
     font-size: 3.8em;
     font-weight: 400;
     border-bottom: 1px solid #deb800;
@@ -394,16 +389,16 @@ header {
     .cv .entry:after {
       clear: both; }
 
-.entry .basic-info {
+.basic-info {
   display: block;
   float: left;
   margin-right: 2.35765%;
   width: 31.76157%;
   padding: 3em 4em;
   position: relative; }
-  .entry .basic-info:last-child {
+  .basic-info:last-child {
     margin-right: 0; }
-  .entry .basic-info.red:before {
+  .basic-info.red:before {
     content: '';
     display: block;
     width: 346px;
@@ -415,7 +410,7 @@ header {
     border-right: 346px solid #ffdcdc;
     border-bottom: 176px solid #ffc3c3;
     z-index: -1; }
-  .entry .basic-info.blue:before {
+  .basic-info.blue:before {
     content: '';
     display: block;
     width: 346px;
@@ -427,7 +422,7 @@ header {
     border-right: 346px solid #dce6ff;
     border-bottom: 176px solid #c3d9ff;
     z-index: -1; }
-  .entry .basic-info.green:before {
+  .basic-info.green:before {
     content: '';
     display: block;
     width: 346px;
@@ -439,27 +434,48 @@ header {
     border-right: 346px solid #e3ffdc;
     border-bottom: 176px solid #d4ffc3;
     z-index: -1; }
-  .entry .basic-info span {
+  .basic-info.grey:before {
+    content: '';
+    display: block;
+    width: 346px;
+    height: 176px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    border-right: 346px solid #eaeaea;
+    border-bottom: 176px solid #dddddd;
+    z-index: -1; }
+  .basic-info span {
     display: block; }
-  .entry .basic-info .role,
-  .entry .basic-info .company,
-  .entry .basic-info .duration {
+  .basic-info .role,
+  .basic-info .company,
+  .basic-info .duration {
     font-family: Muli; }
-  .entry .basic-info .role,
-  .entry .basic-info .company {
+  .basic-info .role,
+  .basic-info .company {
     font-size: 1.2em;
     font-weight: 600;
     line-height: 1.3em; }
-  .entry .basic-info .duration {
+  .basic-info .duration {
     margin-top: 0.8em; }
-.entry .full-info {
+  .basic-info ol.contact-details {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .basic-info ol.contact-details li {
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 1.5em; }
+
+.full-info {
   display: block;
   float: left;
   margin-right: 2.35765%;
   width: 65.88078%; }
-  .entry .full-info:last-child {
+  .full-info:last-child {
     margin-right: 0; }
-  .entry .full-info p:first-child {
+  .full-info p:first-child {
     margin-top: 0; }
 
 @media screen and (max-width: 1138px) {

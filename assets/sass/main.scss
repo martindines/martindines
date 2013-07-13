@@ -24,17 +24,21 @@ body {
     font-family: Muli;
 }
 
+h2 {
+    font-family: Nunito;
+}
+
 header {
 
-    @include outer-container;
-    margin-bottom: 3em;
-    padding: 5em 4em;
+    margin: 3em 0;
+    padding: 3em 0;
     background-color: #ffd400;
+    text-align: center;
 
     h1 {
         margin: 0 0 0.15em 0;
         padding-bottom: 0.2em;
-        font-family: 'Nunito';
+        font-family: Nunito;
         font-size: 3.8em;
         font-weight: 400;
         border-bottom: 1px solid #deb800;
@@ -61,49 +65,58 @@ header {
 
 }
 
+.basic-info {
 
-.entry {
+    @include span-columns(4);
+    padding: 3em 4em;
+    position: relative;
 
-    .basic-info {
+    &.red { @include diag-background(346px, 176px, #ffc3c3, #ffdcdc); }
+    &.blue { @include diag-background(346px, 176px, #c3d9ff, #dce6ff); }
+    &.green { @include diag-background(346px, 176px, #d4ffc3, #e3ffdc); }
+    &.grey { @include diag-background(346px, 176px, #ddd); }
 
-        @include span-columns(4);
-        padding: 3em 4em;
-        position: relative;
+    span {
+        display: block;
+    }
 
-        &.red { @include diag-background(346px, 176px, #ffc3c3, #ffdcdc); }
-        &.blue { @include diag-background(346px, 176px, #c3d9ff, #dce6ff); }
-        &.green { @include diag-background(346px, 176px, #d4ffc3, #e3ffdc); }
+    .role,
+    .company,
+    .duration {
+        font-family: Muli;
+    }
 
-        span {
-            display: block;
-        }
+    .role,
+    .company {
+        font-size: 1.2em;
+        font-weight: 600;
+        line-height: 1.3em;
+    }
 
-        .role,
-        .company,
-        .duration {
-            font-family: Muli;
-        }
+    .duration {
+        margin-top: 0.8em;
+    }
 
-        .role,
-        .company {
+    ol.contact-details {
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
             font-size: 1.2em;
             font-weight: 600;
-            line-height: 1.3em;
-        }
-
-        .duration {
-            margin-top: 0.8em;
+            line-height: 1.5em;
         }
 
     }
 
-    .full-info {
+}
 
-        @include span-columns(8);
+.full-info {
 
-        p:first-child { margin-top: 0 }
-
-    }
+    @include span-columns(8);
+    p:first-child { margin-top: 0 }
 
 }
 
