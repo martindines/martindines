@@ -1,0 +1,117 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Muli|Nunito:300);
+
+@mixin diag-background($width, $height, $backgroundColor, $highlightColor: "") {
+    &:before {
+        content: '';
+        display: block;
+        width: $width;
+        height: $height;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        border-right: $width solid if($highlightColor == "", lighten($backgroundColor, 5%), $highlightColor);
+        border-bottom: $height solid $backgroundColor;
+        z-index: -1;
+    }
+}
+
+body {
+    margin: 3em 0;
+    font-family: Muli;
+}
+
+header {
+
+    @include outer-container;
+    margin-bottom: 3em;
+    padding: 5em 4em;
+    background-color: #ffd400;
+
+    h1 {
+        margin: 0 0 0.15em 0;
+        padding-bottom: 0.2em;
+        font-family: 'Nunito';
+        font-size: 3.8em;
+        font-weight: 400;
+        border-bottom: 1px solid #deb800;
+        display: inline-block;
+    }
+
+    h3 {
+        margin: 0.4em 0;
+        font-size: 1.9em;
+        font-weight: 400;
+    }
+
+}
+
+.summary,
+.cv {
+
+    @include outer-container;
+
+    .entry {
+        @include row();
+        margin-bottom: 3em;
+    }
+
+}
+
+
+.entry {
+
+    .basic-info {
+
+        @include span-columns(4);
+        padding: 3em 4em;
+        position: relative;
+
+        &.red { @include diag-background(346px, 176px, #ffc3c3, #ffdcdc); }
+        &.blue { @include diag-background(346px, 176px, #c3d9ff, #dce6ff); }
+        &.green { @include diag-background(346px, 176px, #d4ffc3, #e3ffdc); }
+
+        span {
+            display: block;
+        }
+
+        .role,
+        .company,
+        .duration {
+            font-family: Muli;
+        }
+
+        .role,
+        .company {
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.3em;
+        }
+
+        .duration {
+            margin-top: 0.8em;
+        }
+
+    }
+
+    .full-info {
+
+        @include span-columns(8);
+
+        p:first-child { margin-top: 0 }
+
+    }
+
+}
+
+// 25 + 1088 + 25
+@include media(max-width 1138px) {
+
+    body {
+        background-color: #000 !important;
+    }
+
+}
