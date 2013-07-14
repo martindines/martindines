@@ -1808,7 +1808,7 @@ header {
   header h1 {
     margin: 0 0 0.15em 0;
     padding-bottom: 0.2em;
-    border-bottom: 1px dotted #444;
+    border-bottom: 1px solid #444;
     font-size: 3.8em;
     font-weight: 400;
     display: inline-block; }
@@ -1872,6 +1872,8 @@ header {
         display: inline-block; }
         .basic-info ol.contact-details li a:hover {
           opacity: 0.7; }
+      .basic-info ol.contact-details li.download {
+        margin-top: 1em; }
       .basic-info ol.contact-details li i[class^=icon-] {
         height: 1.5em;
         width: 1.5em;
@@ -1899,6 +1901,7 @@ header {
     left: 0;
     top: 0;
     box-sizing: border-box;
+    background-color: #ffdcdc;
     border-right: 346px solid #ffdcdc;
     border-bottom: 176px solid #ffc3c3;
     z-index: -1; }
@@ -1911,6 +1914,7 @@ header {
     left: 0;
     top: 0;
     box-sizing: border-box;
+    background-color: #dce6ff;
     border-right: 346px solid #dce6ff;
     border-bottom: 176px solid #c3d9ff;
     z-index: -1; }
@@ -1923,6 +1927,7 @@ header {
     left: 0;
     top: 0;
     box-sizing: border-box;
+    background-color: #e3ffdc;
     border-right: 346px solid #e3ffdc;
     border-bottom: 176px solid #d4ffc3;
     z-index: -1; }
@@ -1935,6 +1940,7 @@ header {
     left: 0;
     top: 0;
     box-sizing: border-box;
+    background-color: #eaeaea;
     border-right: 346px solid #eaeaea;
     border-bottom: 176px solid #dddddd;
     z-index: -1; }
@@ -1978,4 +1984,112 @@ header {
 
 @media screen and (max-width: 1138px) {
   body {
-    background-color: #000 !important; } }
+    font-size: 0.95em; }
+
+  .summary,
+  .experience {
+    *zoom: 1;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto; }
+    .summary:before, .summary:after,
+    .experience:before,
+    .experience:after {
+      content: " ";
+      display: table; }
+    .summary:after,
+    .experience:after {
+      clear: both; }
+
+  .experience .basic-info {
+    white-space: nowrap; }
+    .experience .basic-info:before {
+      width: 305px !important;
+      border-right-width: 305px !important; } }
+@media screen and (max-width: 1010px) {
+  body {
+    font-size: 0.95em; }
+
+  .summary,
+  .experience {
+    *zoom: 1;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto; }
+    .summary:before, .summary:after,
+    .experience:before,
+    .experience:after {
+      content: " ";
+      display: table; }
+    .summary:after,
+    .experience:after {
+      clear: both; }
+
+  .summary .basic-info {
+    font-size: 0.8em; }
+
+  .experience .basic-info,
+  .experience .full-info {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .experience .basic-info:last-child,
+    .experience .full-info:last-child {
+      margin-right: 0; }
+  .experience .basic-info {
+    margin-bottom: 1em;
+    padding: 1em; }
+    .experience .basic-info:before {
+      height: 100% !important;
+      width: 100% !important;
+      border-right-width: 0px !important;
+      border-bottom-width: 0.5em !important; }
+    .experience .basic-info .role,
+    .experience .basic-info .company,
+    .experience .basic-info .duration {
+      display: inline;
+      font-size: 1em;
+      font-weight: 600; }
+      .experience .basic-info .role:after,
+      .experience .basic-info .company:after,
+      .experience .basic-info .duration:after {
+        content: ','; }
+      .experience .basic-info .role:last-child:after,
+      .experience .basic-info .company:last-child:after,
+      .experience .basic-info .duration:last-child:after {
+        content: ''; } }
+@media screen and (max-width: 830px) {
+  body {
+    font-size: 0.85em; }
+
+  .summary,
+  .experience {
+    *zoom: 1;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 2em; }
+    .summary:before, .summary:after,
+    .experience:before,
+    .experience:after {
+      content: " ";
+      display: table; }
+    .summary:after,
+    .experience:after {
+      clear: both; }
+
+  .basic-info,
+  .full-info {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .basic-info:last-child,
+    .full-info:last-child {
+      margin-right: 0; }
+
+  .basic-info {
+    margin-bottom: 1em;
+    padding: 1em;
+    white-space: normal !important; } }

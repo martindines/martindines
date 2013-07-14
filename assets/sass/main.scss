@@ -7,6 +7,8 @@ $FontAwesomePath: '../fonts/fontawesome';
 @import "fonts/fontawesome/font-awesome";
 
 @mixin diag-background($width, $height, $backgroundColor, $highlightColor: "") {
+    $highlightColor: if($highlightColor == "", lighten($backgroundColor, 5%), $highlightColor);
+
     &:before {
         content: '';
         display: block;
@@ -16,7 +18,8 @@ $FontAwesomePath: '../fonts/fontawesome';
         left: 0;
         top: 0;
         box-sizing: border-box;
-        border-right: $width solid if($highlightColor == "", lighten($backgroundColor, 5%), $highlightColor);
+        background-color: $highlightColor;
+        border-right: $width solid $highlightColor;
         border-bottom: $height solid $backgroundColor;
         z-index: -1;
     }
@@ -55,7 +58,7 @@ header {
     h1 {
         margin: 0 0 0.15em 0;
         padding-bottom: 0.2em;
-        border-bottom: 1px dotted #444;
+        border-bottom: 1px solid #444;
         font-size: 3.8em;
         font-weight: 400;
         display: inline-block;
@@ -113,6 +116,10 @@ header {
                     opacity: 0.7;
                 }
 
+            }
+
+            &.download {
+                margin-top: 1em;
             }
 
             i[class^=icon-] {
@@ -208,8 +215,127 @@ header {
 // 25 + 1088 + 25
 @include media(max-width 1138px) {
 
+    $max-width: 960px;
+
     body {
-        background-color: #000 !important;
+        font-size: 0.95em;
+    }
+
+    .summary,
+    .experience {
+        @include outer-container;
+    }
+
+    .experience {
+
+        .basic-info {
+
+            white-space: nowrap; // Reconsider this
+
+            &:before {
+                width: 305px !important;
+                border-right-width: 305px !important;
+            }
+
+        }
+
+    }
+
+}
+
+// 25 + 960 + 25
+@include media(max-width 1010px) {
+
+    $max-width: 780px;
+
+    body {
+        font-size: 0.95em;
+    }
+
+    .summary,
+    .experience {
+        @include outer-container;
+    }
+
+    .summary {
+
+        .basic-info {
+            font-size: 0.8em;
+        }
+
+    }
+
+    .experience {
+
+        .basic-info,
+        .full-info {
+            @include span-columns(12);
+        }
+
+        .basic-info {
+
+            margin-bottom: 1em;
+            padding: 1em;
+
+            &:before {
+                height: 100% !important;
+                width: 100% !important;
+                border-right-width: 0px !important;
+                border-bottom-width: 0.5em !important;
+            }
+
+            .role,
+            .company,
+            .duration {
+
+                display: inline;
+                font-size: 1em;
+                font-weight: 600;
+
+                &:after {
+                    content: ',';
+                }
+
+                &:last-child {
+
+                    &:after {
+                        content: '';
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+// 25 + 780 + 25
+@include media(max-width 830px) {
+
+    $max-width: 100%;
+
+    body {
+        font-size: 0.85em;
+    }
+
+    .summary,
+    .experience {
+        @include outer-container;
+        margin: 0 2em;
+    }
+
+    .basic-info,
+    .full-info {
+        @include span-columns(12);
+    }
+
+    .basic-info {
+        margin-bottom: 1em;
+        padding: 1em;
+        white-space: normal !important;
     }
 
 }
