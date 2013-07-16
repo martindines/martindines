@@ -1819,36 +1819,45 @@ header {
     font-weight: 400; }
 
 .summary,
-.experience {
+.experience,
+.skills {
   *zoom: 1;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
   .summary:before, .summary:after,
   .experience:before,
-  .experience:after {
+  .experience:after,
+  .skills:before,
+  .skills:after {
     content: " ";
     display: table; }
   .summary:after,
-  .experience:after {
+  .experience:after,
+  .skills:after {
     clear: both; }
   .summary h2,
-  .experience h2 {
+  .experience h2,
+  .skills h2 {
     margin-bottom: 1em;
     padding-bottom: 0.7em;
     border-bottom: 1px solid #222; }
   .summary .entry,
-  .experience .entry {
+  .experience .entry,
+  .skills .entry {
     *zoom: 1;
     display: block;
     margin-bottom: 3em; }
     .summary .entry:before, .summary .entry:after,
     .experience .entry:before,
-    .experience .entry:after {
+    .experience .entry:after,
+    .skills .entry:before,
+    .skills .entry:after {
       content: " ";
       display: table; }
     .summary .entry:after,
-    .experience .entry:after {
+    .experience .entry:after,
+    .skills .entry:after {
       clear: both; }
 
 .basic-info {
