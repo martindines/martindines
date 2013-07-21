@@ -238,6 +238,15 @@ header {
 
 }
 
+.skills {
+
+    .col-3 {
+        @include span-columns(4);
+    }
+
+}
+
+
 // 25 + 1088 + 25
 @include media(max-width 1138px) {
 
