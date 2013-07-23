@@ -1,0 +1,396 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Muli|Nunito:300);
+
+$FontAwesomePath: '../fonts/fontawesome';
+@import "fonts/fontawesome/font-awesome";
+
+@mixin diag-background($width, $height, $backgroundColor, $highlightColor: "") {
+    $highlightColor: if($highlightColor == "", lighten($backgroundColor, 5%), $highlightColor);
+
+    &:before {
+        content: '';
+        display: block;
+        width: $width;
+        height: $height;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        background-color: $highlightColor;
+        border-right: $width solid $highlightColor;
+        border-bottom: $height solid $backgroundColor;
+        z-index: -1;
+    }
+}
+
+::-moz-selection {
+    background-color: #ae9add;
+}
+
+::selection {
+    background-color: #ae9add;
+}
+
+body {
+    margin: 3em 0;
+    font-family: Muli;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Nunito;
+}
+
+header {
+
+    margin: 3em 0;
+    padding: 3em 0;
+
+    background: #222 url('../images/space-mini.jpg') no-repeat center;
+    background-size: cover;
+
+    text-align: center;
+    color: #f5f5f5;
+    text-shadow: 0px 2px 0px #674fad;
+
+    h1 {
+        margin: 0 0 0.15em 0;
+        padding-bottom: 0.2em;
+        border-bottom: 1px solid #444;
+        font-size: 3.8em;
+        font-weight: 400;
+        display: inline-block;
+    }
+
+    h3 {
+        margin: 0.4em 0;
+        font-family: Muli;
+        font-size: 1.9em;
+        font-weight: 400;
+    }
+
+}
+
+.summary,
+.experience,
+.skills {
+
+    @include outer-container;
+
+    h2 {
+        margin-bottom: 1em;
+        padding-bottom: 0.7em;
+        border-bottom: 1px solid #222;
+    }
+
+    .entry {
+        @include row();
+        margin-bottom: 3em;
+    }
+
+}
+
+.basic-info {
+
+    @include span-columns(4);
+
+    ol.contact-details {
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 2em;
+
+            a {
+                text-decoration: none;
+                color: #222;
+                display: inline-block;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+            }
+
+            &.download {
+                margin-top: 1em;
+            }
+
+            i[class^=icon-] {
+                height: 1.5em;
+                width: 1.5em;
+                margin-right: 1em;
+                @include border-radius(5px);
+                background-color: #222;
+                font-size: 0.8em;
+                color: #f5f5f5;
+                box-shadow: 0px 2px 0px #b092f1;
+                line-height: 1.5em;
+                text-align: center;
+                display: inline-block;
+            }
+
+        }
+
+    }
+
+}
+
+.experience {
+
+    .basic-info {
+
+        padding: 3em 4em;
+        position: relative;
+
+        &.red { @include diag-background(346px, 176px, #ffc3c3, #ffdcdc); }
+        &.blue { @include diag-background(346px, 176px, #c3d9ff, #dce6ff); }
+        &.green { @include diag-background(346px, 176px, #d4ffc3, #e3ffdc); }
+        &.grey { @include diag-background(346px, 176px, #ddd); }
+
+        span {
+            display: block;
+        }
+
+        .role,
+        .company,
+        .duration {
+            font-family: Muli;
+        }
+
+        .role,
+        .company {
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.3em;
+        }
+
+        .duration {
+            margin-top: 0.8em;
+        }
+
+    }
+
+}
+
+.full-info {
+
+    @include span-columns(8);
+    p:first-child { margin-top: 0 }
+
+    .additional {
+
+        padding-top: 1em;
+
+        &.red {
+            border-top: 0.5em solid #ffc3c3;
+            color: darken(#ffc3c3, 10%);
+        }
+
+        &.blue {
+            border-top: 0.5em solid #c3d9ff;
+            color: darken(#c3d9ff, 10%);
+        }
+
+        &.green {
+            border-top: 0.5em solid #d4ffc3;
+            color: darken(#d4ffc3, 10%);
+        }
+
+        &.grey {
+            border-top: 0.5em solid #ddd;
+            color: darken(#ddd, 10%);
+        }
+
+        .projects {
+
+            margin: 0 0 1em 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+
+                display: inline-block;
+
+                img {
+                    height: 3em;
+                    @include border-radius(5px);
+                    background-color: #000;
+                    box-shadow: 0px 2px 0px;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.skills {
+
+    .col-3 {
+        @include span-columns(4);
+    }
+
+}
+
+
+// 25 + 1088 + 25
+@include media(max-width 1138px) {
+
+    $max-width: 960px;
+
+    body {
+        font-size: 0.95em;
+    }
+
+    .summary,
+    .experience,
+    .skills {
+        @include outer-container;
+    }
+
+    .experience {
+
+        .basic-info {
+
+            white-space: nowrap; // Reconsider this
+
+            &:before {
+                width: 305px !important;
+                border-right-width: 305px !important;
+            }
+
+        }
+
+    }
+
+}
+
+// 25 + 960 + 25
+@include media(max-width 1010px) {
+
+    $max-width: 780px;
+
+    body {
+        font-size: 0.95em;
+    }
+
+    .summary,
+    .experience,
+    .skills {
+        @include outer-container;
+    }
+
+    .summary {
+
+        .basic-info {
+            font-size: 0.8em;
+        }
+
+    }
+
+    .experience {
+
+        .basic-info,
+        .full-info {
+            @include span-columns(12);
+        }
+
+        .basic-info {
+
+            margin-bottom: 1em;
+            padding: 1em;
+
+            &:before {
+                height: 100% !important;
+                width: 100% !important;
+                border-right-width: 0px !important;
+                border-bottom-width: 0.5em !important;
+            }
+
+            .role,
+            .company,
+            .duration {
+
+                display: inline;
+                font-size: 1em;
+                font-weight: 600;
+
+                &:after {
+                    content: ',';
+                }
+
+                &:last-child {
+
+                    &:after {
+                        content: '';
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+// 25 + 780 + 25
+@include media(max-width 830px) {
+
+    $max-width: 100%;
+
+    body {
+        font-size: 0.85em;
+    }
+
+    .summary,
+    .experience,
+    .skills {
+        @include outer-container;
+        margin: 0 2em;
+    }
+
+    .basic-info,
+    .full-info {
+        @include span-columns(12);
+    }
+
+    .basic-info {
+        margin-bottom: 1em;
+        padding: 1em;
+        white-space: normal !important;
+    }
+
+    .skills {
+
+        .col-3 {
+
+            @include span-columns(12);
+
+            ul {
+                border-left: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+                padding-left: 3em;
+                padding-right: 1em;
+            }
+
+        }
+
+    }
+
+}
