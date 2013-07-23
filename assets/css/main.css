@@ -2019,18 +2019,22 @@ header {
     font-size: 0.95em; }
 
   .summary,
-  .experience {
+  .experience,
+  .skills {
     *zoom: 1;
     max-width: 960px;
     margin-left: auto;
     margin-right: auto; }
     .summary:before, .summary:after,
     .experience:before,
-    .experience:after {
+    .experience:after,
+    .skills:before,
+    .skills:after {
       content: " ";
       display: table; }
     .summary:after,
-    .experience:after {
+    .experience:after,
+    .skills:after {
       clear: both; }
 
   .experience .basic-info {
@@ -2043,18 +2047,22 @@ header {
     font-size: 0.95em; }
 
   .summary,
-  .experience {
+  .experience,
+  .skills {
     *zoom: 1;
     max-width: 780px;
     margin-left: auto;
     margin-right: auto; }
     .summary:before, .summary:after,
     .experience:before,
-    .experience:after {
+    .experience:after,
+    .skills:before,
+    .skills:after {
       content: " ";
       display: table; }
     .summary:after,
-    .experience:after {
+    .experience:after,
+    .skills:after {
       clear: both; }
 
   .summary .basic-info {
@@ -2096,7 +2104,8 @@ header {
     font-size: 0.85em; }
 
   .summary,
-  .experience {
+  .experience,
+  .skills {
     *zoom: 1;
     max-width: 100%;
     margin-left: auto;
@@ -2104,11 +2113,14 @@ header {
     margin: 0 2em; }
     .summary:before, .summary:after,
     .experience:before,
-    .experience:after {
+    .experience:after,
+    .skills:before,
+    .skills:after {
       content: " ";
       display: table; }
     .summary:after,
-    .experience:after {
+    .experience:after,
+    .skills:after {
       clear: both; }
 
   .basic-info,
@@ -2124,4 +2136,17 @@ header {
   .basic-info {
     margin-bottom: 1em;
     padding: 1em;
-    white-space: normal !important; } }
+    white-space: normal !important; }
+
+  .skills .col-3 {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .skills .col-3:last-child {
+      margin-right: 0; }
+    .skills .col-3 ul {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      padding-left: 3em;
+      padding-right: 1em; } }
