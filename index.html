@@ -6,6 +6,7 @@
 
 		<title>CV / Résumé | Martin Dines - Web Developer, London</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Curriculum vitae of Martin Dines - Magento / PHP Developer based in London">
 
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
@@ -27,10 +28,10 @@
             <div class="entry">
                 <div class="basic-info">
                     <ol class="contact-details">
-                        <li><a href="mailto:martin.dines@live.co.uk"><i class="icon-envelope-alt"></i>martin.dines@live.co.uk</a></li>
-                        <li><a href="http://uk.linkedin.com/in/mdines"><i class="icon-linkedin"></i>linkedin.com/in/mdines</a></li>
-                        <li><a href="http://www.twitter.com/_dines"><i class="icon-twitter"></i>@_dines</a></li>
-                        <li class="download"><a href="#"><i class="icon-download-alt"></i>Download Complete CV</a></li>
+                        <li><a href="mai&#108;&#116;o&#58;%&#54;Dar&#37;74in&#46;dine&#115;&#64;l&#105;ve&#46;co&#46;%7&#53;%6&#66;"><i class="icon-envelope-alt"></i>ma&#114;t&#105;n&#46;dines&#64;live&#46;co&#46;uk</a></li>
+                        <li><a href="http://uk.linkedin.com/in/mdines" onClick="_gaq.push(['_trackEvent', 'CV', 'Link', 'LinkedIn']);"><i class="icon-linkedin"></i>linkedin.com/in/mdines</a></li>
+                        <li><a href="http://www.twitter.com/_dines" onClick="_gaq.push(['_trackEvent', 'CV', 'Link', 'Twitter']);"><i class="icon-twitter"></i>@_dines</a></li>
+                        <li class="download"><a href="#" onClick="_gaq.push(['_trackEvent', 'CV', 'Link', 'Download CV']);"><i class="icon-download-alt"></i>Download Complete CV</a></li>
                     </ol>
                 </div>
                 <div class="full-info">
@@ -53,7 +54,7 @@
                     <p>Whilst at GPMD, working with a team of developers on large projects, I've learnt and actively practice project management methodologies including agile and scrum to sure on time, to spec, deliveries.</p>
                     <p>GPMD and my colleagues are active in the London development community and subsequently I have attended meetups and been fortunate enough to meet some very inspiring people. Its this buzz and energy that drives me as a developer to better my skills, knowledge and career.</p>
                     <div class="additional red">
-                        2 Awards 3 Recommendations
+                        <span>View Projects <sup>coming soon</sup></span>
                     </div>
                 </div>
             </div>
@@ -68,15 +69,7 @@
                     <p>Whilst at Impact Media I achieved 4 recognised awards (which are available on request) for the creation of their current site a long with multi client sites.</p>
                     <p>I was given a great opportunity at Impact Media and thoroughly enjoyed my time there. It opened my eyes to the web development community which has pushed me towards achieving my goals.</p>
                     <div class="additional blue">
-                        <ul class="projects">
-                            <li><img src="http://placekitten.com/g/500/500" /></li>
-                            <li><img src="http://placekitten.com/g/300/500" /></li>
-                            <li><img src="http://placekitten.com/g/400/500" /></li>
-                            <li><img src="http://placekitten.com/g/500/400" /></li>
-                            <li><img src="http://placekitten.com/g/500/300" /></li>
-                            <li><img src="http://placekitten.com/g/500/200" /></li>
-                        </ul>
-                        <span>4 Awards 1 Recommendation</span>
+                        <span>4 Awards 1 Recommendation - View Projects <sup>coming soon</sup></span>
                     </div>
                 </div>
 			</div>
@@ -124,7 +117,7 @@
             <div class="col-3">
                 <h3>Backend Development</h3>
                 <ul>
-                    <li>Working Full Stack knowledge</li>
+                    <li>Practicing Full Stack Developer</li>
                     <li>Ability to write clear concise tested PHP OOP code taking security in to account</li>
                     <li>Design scalable database structures that ensure data is easily managed and accessed</li>
                     <li>Magento, SilverStripe, and WordPress</li>
@@ -145,14 +138,43 @@
                 </ul>
             </div>
             <div class="col-3">
-                <h3>Project Management</h3>
-                <p>Paragraph here explaining how I am venturing in to project management in an agile approach, including speccing with user profiles and stories, planning and estimating work required and then scheduling sprints followed by retrospectives and post mortems</p>
+                <h3>Project / Team Management</h3>
+                <p>I have recently become interested in project and team management. As a developer I feel I have a good understanding of what does and doesn't work when managing the development of a project. This is something I wish to build on and perhaps venture into in the future.</p>
+                <p>Writing user stories, feature specifications, planning, and estimating are all areas I have experience in. I've been working as part of a team practicing a hybrid agile approach to management including SCRUM and MoSCoW.</p>
             </div>
         </section>
         <section class="experience">
             <h2>References</h2>
             <p>References available on request</p>
         </section>
-        <footer></footer>
-	</body>
+        <footer>
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-42670727-1']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+                var hasScrolled = false;
+                var hasReachedBottom = false;
+
+                document.onscroll = function() {
+                    if (!hasScrolled) {
+                        _gaq.push(['_trackEvent', 'CV', 'Scroll', 'Has Scrolled']);
+                        hasScrolled = true;
+                    }
+                    if (!hasReachedBottom) {
+                        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                            _gaq.push(['_trackEvent', 'CV', 'Scroll', 'Reached Bottom']);
+                            hasReachedBottom = true;
+                        }
+                    }
+                }
+            </script>
+        </footer>
+    </body>
 </html>
