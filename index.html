@@ -178,7 +178,7 @@
                             hasReachedBottom = true;
                         }
                     }
-                    if (window.scrollY >= 0) {
+                    if (window.innerWidth > 830 && window.scrollY >= 0) {
                         headerElem.style.backgroundPosition = '50% ' + (50 - (window.scrollY / 10)) + "%";
                         headerElem.style.opacity = 1 - ((window.scrollY - 170) / 170);
                     }
