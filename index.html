@@ -150,8 +150,11 @@
         <footer>
             <script type="text/javascript">
                 var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-42670727-1']);
-                _gaq.push(['_trackPageview']);
+
+                if (location.hostname === 'martindines.co.uk') {
+                    _gaq.push(['_setAccount', 'UA-42670727-1']);
+                    _gaq.push(['_trackPageview']);
+                }
 
                 (function() {
                     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -161,6 +164,8 @@
 
                 var hasScrolled = false;
                 var hasReachedBottom = false;
+
+                var headerElem = document.getElementsByTagName('header')[0];
 
                 document.onscroll = function() {
                     if (!hasScrolled) {
@@ -172,6 +177,10 @@
                             _gaq.push(['_trackEvent', 'CV', 'Scroll', 'Reached Bottom']);
                             hasReachedBottom = true;
                         }
+                    }
+                    if (window.scrollY >= 0) {
+                        headerElem.style.backgroundPosition = '50% ' + (50 - (window.scrollY / 10)) + "%";
+                        headerElem.style.opacity = 1 - ((window.scrollY - 170) / 170);
                     }
                 }
             </script>
