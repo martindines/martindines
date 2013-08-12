@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>CV / Résumé | Martin Dines - Web Developer, London</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Curriculum vitae of Martin Dines - Magento / PHP Developer based in London">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li>cv / résumé</li>
+        <li>magento modules</li>
+        <li>labs</li>
+    </ul>
+</nav>
+<style type="text/css">
+    header {
+        /*background-image: url('http://www.wallpapers10.net/wp-content/uploads/2010/03/Blue_Clouds.jpg');*/
+        background-image: url('http://www.wallgc.com/images/2013/02/ghost-nebula-outer-space-galaxy-hd.jpg');
+        /*background-image: url('http://wallpapersus.com/wp-content/uploads/2012/09/Outer-Space-Stars-Galaxies-Purple.jpg');*/
+        /*background-image: url('http://wallpapersinhq.com/images/bigest/1920x1080_amazing_space_background.jpg');*/
+    }
+
+    header h1 {
+        margin: 0;
+        padding: 0;
+        border-bottom: 0;
+    }
+</style>
+<header>
+    <h1>Martin Dines</h1>
+</header>
+<section class="skills">
+    <h2>Magento Modules</h2>
+    <p>All the skills! Ok maybe not yet but I'm certainly working towards growing the following lists and pushing myself to expand my knowledge.</p>
+    <div class="col-3">
+        <h3>Backend Development</h3>
+        <ul>
+            <li>Practicing Full Stack Developer</li>
+            <li>Ability to write clear concise tested PHP OOP code taking security in to account</li>
+            <li>Design scalable database structures that ensure data is easily managed and accessed</li>
+            <li>Magento, SilverStripe, and WordPress</li>
+            <li>Familiar with a range of frameworks:- Sf2, Silex, ZF, CI, Kohana, and Laravel</li>
+            <li>Huge fan of TDD & BDD practices (especially regression testing!) Using phpspec, PHPUnit and Behat whenever possible</li>
+            <li><strong>Self confessed documentation buff</strong></li>
+            <li>Range of tools to aid development - Git (&flow) / SVN, Composer, Modman, Vagrant, Jenkins CI, N98_Magerun</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <h3>Frontend Development</h3>
+        <ul>
+            <li>Great knowledge of Javascript and related frameworks / libraries (KnockoutJs, Angular, jQuery & Prototype)</li>
+            <li>Always pushing towards clean maintainable site structures and CSS using SCSS/Less (Bourbon, Neat, Compass, Bootstrap)</li>
+            <li>Familiar with frontend automation and build processes such as Grunt and Yeoman</li>
+            <li>Frontend testing to ensure code quality and functionality - JSLint, JSUnit, Behat, Selenium / Sahi</li>
+            <li>Keep up to date with the latest local SEO practices</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <h3>Project / Team Management</h3>
+        <p>I have recently become interested in project and team management. As a developer I feel I have a good understanding of what does and doesn't work when managing the development of a project. This is something I wish to build on and perhaps venture in to in the future.</p>
+        <p>Writing user stories, feature specifications, planning, and estimating are all areas I have experience in. I've been working as part of a team practicing a hybrid agile approach to management including SCRUM and MoSCoW.</p>
+    </div>
+</section>
+<footer>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+
+        if (location.hostname === 'martindines.co.uk') {
+            _gaq.push(['_setAccount', 'UA-42670727-1']);
+            _gaq.push(['_trackPageview']);
+        }
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        var hasScrolled = false;
+        var hasReachedBottom = false;
+
+        var headerElem = document.getElementsByTagName('header')[0];
+
+        document.onscroll = function() {
+            if (!hasScrolled) {
+                _gaq.push(['_trackEvent', 'CV', 'Scroll', 'Has Scrolled']);
+                hasScrolled = true;
+            }
+            if (!hasReachedBottom) {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    _gaq.push(['_trackEvent', 'CV', 'Scroll', 'Reached Bottom']);
+                    hasReachedBottom = true;
+                }
+            }
+            if (window.innerWidth > 830 && window.scrollY >= 0) {
+                headerElem.style.backgroundPosition = '50% ' + (50 - (window.scrollY / 10)) + "%";
+                headerElem.style.opacity = 1 - ((window.scrollY - 170) / 170);
+            } else {
+                headerElem.style.backgroundPosition = '50% 50%';
+                headerElem.style.opacity = 1;
+            }
+        }
+    </script>
+</footer>
+</body>
+</html>
