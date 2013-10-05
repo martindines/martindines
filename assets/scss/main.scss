@@ -17,7 +17,7 @@ $FontAwesomePath: '../fonts/fontawesome';
         position: absolute;
         left: 0;
         top: 0;
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         background-color: $highlightColor;
         border-right: $width solid $highlightColor;
         border-bottom: $height solid $backgroundColor;
